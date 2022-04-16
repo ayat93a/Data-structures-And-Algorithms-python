@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 from tree.tree import Binary_search_tree , BinaryTree, TNode , Breadth_first
+=======
+from tree.tree import TNode , BinaryTree , Binary_search_tree , Breadth_first
+>>>>>>> origin/main
 # from stack_and_queue.queue import Queue
 
 def test_empty_tree():
