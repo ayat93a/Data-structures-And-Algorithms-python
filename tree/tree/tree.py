@@ -118,22 +118,22 @@ class BinaryTree(TNode):
         return my_list
 
     def Max(self):
+        my_max = [self.root.value]
         def _traverse(node):
-                max1 = self.root.value
-                max2 = self.root.value
                 if node:
+                    max2 = node.value
                     # print(node.value)
-                    if node.value > max1:
-                        max2= node.value
+                    if my_max[0]> max2 :
+                        my_max[0]= my_max[0]
                     else:
-                        max2 = max2
+                        my_max[0] = max2
                     if node.left:
                         _traverse(node.left )
                     if node.right:
                         _traverse(node.right)
-                return max2
-       
+                return my_max[0]
         return _traverse(self.root )
+
 
 def Breadth_first(tree):
             queue = Queue()
@@ -152,6 +152,7 @@ def Breadth_first(tree):
             return my_list
         
 
+
 class Binary_search_tree(BinaryTree):
     def __init__(self):
         self.root = None
@@ -161,6 +162,8 @@ class Binary_search_tree(BinaryTree):
             return 'empty'
 
         def _contain(node):
+            '''best way to traverse the search tree to search a target value --> pre-order traverse'''
+            '''root --> left -- > right'''
             if node:
                 if node.value == value:
                     return True
@@ -209,12 +212,14 @@ if __name__ == '__main__':
     node5 = TNode('E')
     node6=TNode('F')
     # # node7=TNode('G')
-    # # node1 = TNode(1)
-    # # node2 = TNode(2)
-    # # node3 = TNode(3)
-    # # node4 = TNode(4)
-    # # node5 = TNode(5)
-    # # node6=TNode(6)
+
+    node1 = TNode(7)
+    node2 = TNode(2)
+    node3 = TNode(3)
+    node4 = TNode(4)
+    node5 = TNode(5)
+    node6=TNode(6)
+
     node1.left = node2
     node1.right = node3
     node2.left = node4
@@ -225,8 +230,10 @@ if __name__ == '__main__':
     tree = BinaryTree()
     tree.root = node1
     # tree.Breadth_first()
+
     print(Breadth_first(tree))
     # print(tree.Max())
+
 
     # binary_search_tree = Binary_search_tree()
     # binary_search_tree.Add(20)
