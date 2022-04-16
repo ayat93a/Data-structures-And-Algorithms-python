@@ -1,4 +1,4 @@
-from tree.tree import Binary_search_tree , BinaryTree, TNode
+from tree.tree import Binary_search_tree , BinaryTree, TNode , Breadth_first
 # from stack_and_queue.queue import Queue
 
 def test_empty_tree():
@@ -150,6 +150,15 @@ def test_Breadth_first():
     node2.left = node4
     node2.right= node5
     node3.left= node6
-    actual = tree.Breadth_first()
+    actual = Breadth_first(tree)
     expected = ['A', 'B', 'C', 'D', 'E', 'F']
+    assert expected ==  actual
+
+
+def test_Breadth_first1():
+    tree = BinaryTree()
+    node1 = TNode('A')
+    tree.root = node1
+    actual = Breadth_first(tree)
+    expected = ['A']
     assert expected ==  actual

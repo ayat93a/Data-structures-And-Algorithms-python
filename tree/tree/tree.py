@@ -59,6 +59,10 @@ class BinaryTree(TNode):
                 4- Traverse the right subtree by recursively calling the in-order function.'''
         my_list= []
         def _traverse(node):
+
+            if self.root == None:
+                raise Exception ('This is an empty tree ! nothing to traverse ')
+
             if node:
                 # print(node.value)
                 my_list.append(node.value)
@@ -81,6 +85,9 @@ class BinaryTree(TNode):
                 4- Traverse the right subtree by recursively calling the in-order function.'''
         my_list = []
         def _traverse(node):
+            if self.root == None:
+                raise Exception ('This is an empty tree ! nothing to traverse ')
+
             if node:
                 if node.left:
                     _traverse(node.left)
@@ -104,6 +111,9 @@ class BinaryTree(TNode):
                 4- Display the data part of the root (or current node).'''
         my_list = []
         def _traverse(node):
+            if self.root == None:
+                raise Exception ('This is an empty tree ! nothing to traverse ')
+
             if node :
                 if node.left:
                     _traverse(node.left)
@@ -121,6 +131,8 @@ class BinaryTree(TNode):
         my_max = self.root.value
         def _traverse(node):
                 nonlocal my_max
+                if type(node.value) != type(5):
+                    raise Exception ("not an integer ! max function only for functions")
                 if node:
                     max2 = node.value
                     # print(node.value)
@@ -166,6 +178,9 @@ class Binary_search_tree(BinaryTree):
             '''best way to traverse the search tree to search a target value --> pre-order traverse'''
             '''root --> left -- > right'''
             if node:
+                if self.root == None:
+                    raise Exception ('This is an empty tree ! nothing to traverse ')
+
                 if node.value == value:
                     return True
                 elif node.value > value :
@@ -206,20 +221,20 @@ class Binary_search_tree(BinaryTree):
 
 if __name__ == '__main__':
 
-    # node1 = TNode('A')
-    # node2 = TNode('B')
-    # node3 = TNode('C')
-    # node4 = TNode('D')
-    # node5 = TNode('E')
-    # node6=TNode('F')
+    node1 = TNode('A')
+    node2 = TNode('B')
+    node3 = TNode('C')
+    node4 = TNode('D')
+    node5 = TNode('E')
+    node6=TNode('F')
     # # node7=TNode('G')
 
-    node1 = TNode(7)
-    node2 = TNode(2)
-    node3 = TNode(3)
-    node4 = TNode(4)
-    node5 = TNode(5)
-    node6=TNode(6)
+    # node1 = TNode(7)
+    # node2 = TNode(2)
+    # node3 = TNode(3)
+    # node4 = TNode(4)
+    # node5 = TNode(5)
+    # node6=TNode(6)
 
     node1.left = node2
     node1.right = node3
@@ -233,7 +248,7 @@ if __name__ == '__main__':
 
     # tree.Breadth_first()
 
-    print(Breadth_first(tree))
+    # print(Breadth_first(tree))
     print(tree.Max())
 
 
