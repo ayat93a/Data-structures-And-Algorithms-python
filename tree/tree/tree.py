@@ -117,22 +117,6 @@ class BinaryTree(TNode):
         _traverse(self.root)
         return my_list
 
-    def Breadth_first(self ):
-            queue = Queue()
-            my_list= []
-            queue.enqueue(self.root)
-            while not queue.is_empty(): 
-                    itr = queue.dequeue()
-                    if itr :
-                        my_list.append(itr.value)
-                    # print(itr.value)
-                    if itr.left :
-                        queue.enqueue(itr.left)
-                    
-                    if itr.right:
-                        queue.enqueue(itr.right)
-            return my_list
-
     def Max(self):
         def _traverse(node):
                 max1 = self.root.value
@@ -150,6 +134,22 @@ class BinaryTree(TNode):
                 return max2
        
         return _traverse(self.root )
+
+def Breadth_first(tree):
+            queue = Queue()
+            my_list= []
+            queue.enqueue(tree.root)
+            while not queue.is_empty(): 
+                    itr = queue.dequeue()
+                    if itr :
+                        my_list.append(itr.value)
+                    # print(itr.value)
+                    if itr.left :
+                        queue.enqueue(itr.left)
+                    
+                    if itr.right:
+                        queue.enqueue(itr.right)
+            return my_list
         
 
 class Binary_search_tree(BinaryTree):
@@ -202,12 +202,12 @@ class Binary_search_tree(BinaryTree):
 
 if __name__ == '__main__':
 
-    # node1 = TNode('A')
-    # node2 = TNode('B')
-    # node3 = TNode('C')
-    # node4 = TNode('D')
-    # node5 = TNode('E')
-    # node6=TNode('F')
+    node1 = TNode('A')
+    node2 = TNode('B')
+    node3 = TNode('C')
+    node4 = TNode('D')
+    node5 = TNode('E')
+    node6=TNode('F')
     # # node7=TNode('G')
     # # node1 = TNode(1)
     # # node2 = TNode(2)
@@ -215,34 +215,34 @@ if __name__ == '__main__':
     # # node4 = TNode(4)
     # # node5 = TNode(5)
     # # node6=TNode(6)
-    # node1.left = node2
-    # node1.right = node3
-    # node2.left = node4
-    # node2.right= node5
-    # node3.left= node6
-    # # node3.right = node7
+    node1.left = node2
+    node1.right = node3
+    node2.left = node4
+    node2.right= node5
+    node3.left= node6
+    # node3.right = node7
     
-    # tree = BinaryTree()
-    # tree.root = node1
+    tree = BinaryTree()
+    tree.root = node1
     # tree.Breadth_first()
-    # print(tree.Breadth_first())
+    print(Breadth_first(tree))
     # print(tree.Max())
 
-    binary_search_tree = Binary_search_tree()
-    binary_search_tree.Add(20)
-    binary_search_tree.Add(5)
-    binary_search_tree.Add(30)
-    binary_search_tree.Add(1)
-    binary_search_tree.Add(15)
-    binary_search_tree.Add(9)
-    binary_search_tree.Add(12)
-    binary_search_tree.Add(25)
-    binary_search_tree.Add(40)
-    binary_search_tree.Add(7)
+    # binary_search_tree = Binary_search_tree()
+    # binary_search_tree.Add(20)
+    # binary_search_tree.Add(5)
+    # binary_search_tree.Add(30)
+    # binary_search_tree.Add(1)
+    # binary_search_tree.Add(15)
+    # binary_search_tree.Add(9)
+    # binary_search_tree.Add(12)
+    # binary_search_tree.Add(25)
+    # binary_search_tree.Add(40)
+    # binary_search_tree.Add(7)
 
     # binary_search_tree.Pre_order_rec()
     # print(binary_search_tree.In_order_rec())
-    print(binary_search_tree.Contains(1))
+    # print(binary_search_tree.Contains(1))
     # print(binary_search_tree.root.left.left.value)
     # print(tree.Pre_order_rec())
     # print(tree.In_order_rec())
