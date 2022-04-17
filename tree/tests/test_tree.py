@@ -164,3 +164,19 @@ def test_Breadth_first1():
     actual = Breadth_first(tree)
     expected = ['A']
     assert expected ==  actual
+
+def test_Breadth_first2():
+    binary_search_tree = Binary_search_tree()
+    binary_search_tree.Add(20)
+    binary_search_tree.Add(5)
+    binary_search_tree.Add(30)
+    binary_search_tree.Add(1)
+    binary_search_tree.Add(15)
+    binary_search_tree.Add(9)
+    binary_search_tree.Add(12)
+    binary_search_tree.Add(25)
+    binary_search_tree.Add(40)
+    binary_search_tree.Add(7)
+    actual = binary_search_tree.root.left.left.value
+    expected= 1
+    assert expected ==  actual
