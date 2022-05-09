@@ -218,10 +218,12 @@ class Binary_search_tree(BinaryTree):
             pointer.right = TNode(value)
 
     
+class k_ary_tree:
+    def __init__(self):
+        self.root = None
 
-
-
-
+    def travesre(self):
+        pass
 
 
 
@@ -238,14 +240,16 @@ if __name__ == '__main__':
 
     node1 = TNode(7)
     node2 = TNode(2)
+    noden=TNode(7)
     node3 = TNode(3)
     node4 = TNode(4)
     node5 = TNode(5)
     node6=TNode(6)
-
+    
 
     node1.left = node2
     node1.right = node3
+    node3.right = noden
     node2.left = node4
     node2.right= node5
     node3.left= node6
@@ -255,33 +259,33 @@ if __name__ == '__main__':
     tree.root = node1
 
 
-    print(Breadth_first(tree))
-    print(tree.Max())
+    # print(Breadth_first(tree))
+    # print(tree.Max())
 
-    binary_search_tree = Binary_search_tree()
-    binary_search_tree.Add(20)
-    binary_search_tree.Add(5)
-    binary_search_tree.Add(30)
-    binary_search_tree.Add(1)
-    binary_search_tree.Add(15)
-    binary_search_tree.Add(9)
-    binary_search_tree.Add(12)
-    binary_search_tree.Add(25)
-    binary_search_tree.Add(40)
-    binary_search_tree.Add(7)
+    # binary_search_tree = Binary_search_tree()
+    # binary_search_tree.Add(20)
+    # binary_search_tree.Add(5)
+    # binary_search_tree.Add(30)
+    # binary_search_tree.Add(1)
+    # binary_search_tree.Add(15)
+    # binary_search_tree.Add(9)
+    # binary_search_tree.Add(12)
+    # binary_search_tree.Add(25)
+    # binary_search_tree.Add(40)
+    # binary_search_tree.Add(7)
 
-    binary_search_tree.Pre_order_rec()
-    print(binary_search_tree.In_order_rec())
-    print(binary_search_tree.Contains(1))
-    print(binary_search_tree.root.left.left.value)
-    print(tree.Pre_order_rec())
-    print(tree.In_order_rec())
-    print(tree.Post_ord_rec())
+    # binary_search_tree.Pre_order_rec()
+    # print(binary_search_tree.In_order_rec())
+    # print(binary_search_tree.Contains(1))
+    # print(binary_search_tree.root.left.left.value)
+    # print(tree.Pre_order_rec())
+    # print(tree.In_order_rec())
+    # print(tree.Post_ord_rec())
 
     # tree.Breadth_first()
 
-    # print(Breadth_first(tree))
-    print(tree.Max())
+    print(Breadth_first(tree))
+    # print(tree.Max())
 
 
     # binary_search_tree = Binary_search_tree()
