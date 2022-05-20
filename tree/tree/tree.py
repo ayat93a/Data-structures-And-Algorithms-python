@@ -225,7 +225,53 @@ class k_ary_tree:
     def travesre(self):
         pass
 
+def odd_sum(tree):
+            queue = Queue()
+            my_list = []
+            odd_sum = 0
+            if tree.root == None:
+                raise Exception ('This is an empty tree ! nothing to traverse ')
 
+            queue.enqueue(tree.root)
+            if tree.root.value % 2 != 0:
+                odd_sum += tree.root.value
+            while not queue.is_empty(): 
+                    itr = queue.dequeue()
+                    if itr :
+                        if itr.value % 2 !=0 :
+                            my_list.append(itr.value)
+                    if itr.left :
+                        queue.enqueue(itr.left)
+                        if itr.left.value % 2 !=0 :
+                            odd_sum += itr.left.value
+                    if itr.right:
+                        queue.enqueue(itr.right)
+                        if itr.right.value % 2 !=0 :
+                            odd_sum += itr.right.value
+            return odd_sum
+
+def leaf_node(tree):
+            queue = Queue()
+            my_list= []
+            sumation = 0
+            if tree.root == None:
+                raise Exception ('This is an empty tree ! nothing to traverse ')
+
+            queue.enqueue(tree.root)
+            while not queue.is_empty(): 
+                    itr = queue.dequeue()
+                    if itr :
+                        my_list.append(itr.value)
+                    # print(itr.value)
+                    if itr.left :
+                        queue.enqueue(itr.left)
+                    
+                    if itr.right:
+                        queue.enqueue(itr.right)
+
+                    if itr.left == None and itr.right == None :
+                        sumation +=1
+            return sumation
 
 if __name__ == '__main__':
 
@@ -240,19 +286,19 @@ if __name__ == '__main__':
 
     node1 = TNode(7)
     node2 = TNode(2)
-    noden=TNode(7)
     node3 = TNode(3)
     node4 = TNode(4)
     node5 = TNode(5)
     node6=TNode(6)
+    node7 = TNode(100)
     
 
     node1.left = node2
     node1.right = node3
-    node3.right = noden
     node2.left = node4
     node2.right= node5
     node3.left= node6
+    node4.left = node7
     # node3.right = node7
     
     tree = BinaryTree()
@@ -285,6 +331,8 @@ if __name__ == '__main__':
     # tree.Breadth_first()
 
     print(Breadth_first(tree))
+    # print(odd_sum(tree))
+    print(leaf_node(tree))
     # print(tree.Max())
 
 

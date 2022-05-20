@@ -257,6 +257,7 @@ class LinkedList:
         llstr+='NULL"'
         return llstr 
 
+# def zip_list(l1 , l2):
 
 # updated
 
