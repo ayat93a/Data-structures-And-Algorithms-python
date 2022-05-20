@@ -131,6 +131,7 @@ class BinaryTree(TNode):
         my_max = self.root.value
         def _traverse(node):
                 nonlocal my_max
+
                 if type(node.value) != type(5):
                     raise Exception ("not an integer ! max function only for functions")
                 if node:
@@ -331,9 +332,11 @@ if __name__ == '__main__':
     # tree.Breadth_first()
 
     print(Breadth_first(tree))
+
     # print(odd_sum(tree))
     print(leaf_node(tree))
     # print(tree.Max())
+
 
 
     # binary_search_tree = Binary_search_tree()
@@ -348,13 +351,13 @@ if __name__ == '__main__':
     # binary_search_tree.Add(40)
     # binary_search_tree.Add(7)
 
-    # binary_search_tree.Pre_order_rec()
-    # print(binary_search_tree.In_order_rec())
-    # print(binary_search_tree.Contains(1))
-    # print(binary_search_tree.root.left.left.value)
-    # print(tree.Pre_order_rec())
-    # print(tree.In_order_rec())
-    # print(tree.Post_ord_rec())
+    binary_search_tree.Pre_order_rec()
+    print(binary_search_tree.In_order_rec())
+    print(binary_search_tree.Contains(1))
+    print(binary_search_tree.root.left.left.value)
+    print(tree.Pre_order_rec())
+    print(tree.In_order_rec())
+    print(tree.Post_ord_rec())
 
 
 
