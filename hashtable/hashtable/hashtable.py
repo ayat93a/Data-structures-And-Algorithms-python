@@ -66,6 +66,6 @@ if __name__ == '__main__':
     # print(hashtable.contains("cloud"))
     # print(hashtable.keys)
     # print(hashtable.hash("cloud"))
-    # print(hashtable.hash("cloud"))
+    print(hashtable.hash("cloud"))
     # print(hashtable.keys)
-    print(hashtable.hash("ayat"))
+    # print(hashtable.hash("ayat"))
