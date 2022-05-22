@@ -32,11 +32,21 @@ class Hashtable(object):
             return True
 
     def keys(self):
-        pass 
+        idx = self.get(self.key)
+        for item in self.map:
+            if item is not None:
+                return self.map[idx][self.key]
 
     def hash(self , key):
-        
+        ascii_sum = 0
+        for i in key :
+            i_ascii = ord(i)
+            ascii_sum += i_ascii
 
+        hash_key = (ascii_sum * 907) % self.size
+        return hash_key
+
+    
 
 
 
@@ -46,13 +56,16 @@ if __name__ == '__main__':
     hashtable = Hashtable()
     hashtable.set("cloud", "AWS")
     hashtable.set("cloud", "ayat")
-    hashtable.set("Django", "python")
     # print(hashtable.map[0])
     # for item in enumerate(hashtable.map):
     #     if item is not None:
-    #         print(item)
+    #         print(item[0])
 
-    print(hashtable.contains("ayat"))
-    print(hashtable.contains("cloud"))
-    print(hashtable.contains("cloud"))
-    print(hashtable.contains("Django"))
+    # print(hashtable.contains("ayat"))
+    # print(hashtable.contains("cloud"))
+    # print(hashtable.contains("cloud"))
+    # print(hashtable.keys)
+    # print(hashtable.hash("cloud"))
+    # print(hashtable.hash("cloud"))
+    # print(hashtable.keys)
+    print(hashtable.hash("ayat"))
