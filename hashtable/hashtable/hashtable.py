@@ -1,4 +1,5 @@
-from ast import Return
+
+from operator import indexOf
 
 
 class Hashtable(object):
@@ -48,7 +49,19 @@ class Hashtable(object):
 
     
 
+def repeated_word(string):
+    ascii_sum = 0
+    i=0
+    lst = string.split()
+    dict = []
+    for i in lst:
+        dict.append({i: lst.index(i)})
+    for x in dict[i]['key'] :
+            ascii_sum += ord(i)
+            i += 1
 
+    
+    return ascii_sum
 
 
 
@@ -66,6 +79,7 @@ if __name__ == '__main__':
     # print(hashtable.contains("cloud"))
     # print(hashtable.keys)
     # print(hashtable.hash("cloud"))
-    print(hashtable.hash("cloud"))
+    # print(hashtable.hash("cloud"))
     # print(hashtable.keys)
     # print(hashtable.hash("ayat"))
+    print(repeated_word('hi hhi hiii'))
