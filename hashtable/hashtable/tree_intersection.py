@@ -43,5 +43,5 @@ def compare(my_list1 , my_list2):
     for i in my_list1:
         for j in my_list2 :
             if i == j:
-                result.append(i)
+                result.append(j)
     return result
