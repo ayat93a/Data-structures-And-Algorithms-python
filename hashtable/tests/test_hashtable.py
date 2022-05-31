@@ -1,6 +1,7 @@
 from hashtable.hashtable import Hashtable
 
-def test_get():
+
+def test_set_get():
     hashtable = Hashtable()
     hashtable.set("Django", "python")
     actual = hashtable.get("Django")
