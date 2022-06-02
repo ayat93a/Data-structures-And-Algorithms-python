@@ -1,7 +1,4 @@
 
-from operator import indexOf
-
-
 class Hashtable(object):
     def __init__(self) :
         self.size = 1024
@@ -43,11 +40,14 @@ class Hashtable(object):
         else :
             return True
 
-    def keys(self):
-        idx = self.get(self.key)
-        for item in self.map:
-            if item is not None:
-                return self.map[idx][self.key]
+    # def keys(self):
+    #     lst = []
+    #     for item in self.map:
+    #         if item:
+    #             for i in item :
+    #                 for x in i.keys():
+    #                     lst.append(x)
+    #     return lst
 
     def hash(self , key):
         ascii_sum = 0
@@ -74,7 +74,17 @@ class Hashtable(object):
     
 #     return ascii_sum
 
+def leftJoin(hash1, hash2):
 
+    hash3 = Hashtable()
+
+    for key in hash1.keys():        
+        if hash2.contains(key):
+            hash3.set(key, [hash1.get(key), hash2.get(key)])
+        else:
+            hash3.set(key, [hash1.get(key), 'Null'])
+        
+    return hash3
 
 if __name__ == '__main__':
     hashtable = Hashtable()
@@ -97,5 +107,6 @@ if __name__ == '__main__':
     print(hashtable.get("colud"))
     # hashtable.delete("clou")
     # print(hashtable.get("clou"))
+
 
     # print(repeated_word('hi hhi hiii'))
