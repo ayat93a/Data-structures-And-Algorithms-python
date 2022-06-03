@@ -52,6 +52,12 @@ def test_hash():
     expected = 773
     assert actual == expected
 
+def test_hash1():
+    hashtable = Hashtable()
+    actual = hashtable.hash(75)
+    expected = 676
+    assert actual == expected
+
 def test_delete():
     hashtable = Hashtable()
     hashtable.set("Django", "python")
