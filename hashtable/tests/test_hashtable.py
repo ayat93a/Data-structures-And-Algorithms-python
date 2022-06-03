@@ -1,8 +1,8 @@
 from pyparsing import java_style_comment
 from hashtable.hashtable import Hashtable
 
-
 def test_get():
+
     hashtable = Hashtable()
     hashtable.set("Django", "python")
     actual = hashtable.get("Django")

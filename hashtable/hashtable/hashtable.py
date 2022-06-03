@@ -46,11 +46,7 @@ class Hashtable(object):
         else :
             return True
 
-    # def keys(self):
-    #     idx = self.get(key_)
-    #     for item in self.map:
-    #         if item is not None:
-    #             return self.map[idx][self.key]
+
 
     def hash(self , key):
         ascii_sum = 0
@@ -80,7 +76,17 @@ class Hashtable(object):
     
 #     return ascii_sum
 
+def leftJoin(hash1, hash2):
 
+    hash3 = Hashtable()
+
+    for key in hash1.keys():        
+        if hash2.contains(key):
+            hash3.set(key, [hash1.get(key), hash2.get(key)])
+        else:
+            hash3.set(key, [hash1.get(key), 'Null'])
+        
+    return hash3
 
 if __name__ == '__main__':
     hashtable = Hashtable()
@@ -106,6 +112,7 @@ if __name__ == '__main__':
     print(hashtable.get("colud"))
     # hashtable.delete("clou")
     # print(hashtable.get("clou"))
+
 
     # print(repeated_word('hi hhi hiii'))
     print(hashtable.keys())
