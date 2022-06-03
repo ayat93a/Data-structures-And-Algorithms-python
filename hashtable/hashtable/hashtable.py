@@ -1,7 +1,4 @@
 
-from operator import indexOf
-
-
 class Hashtable(object):
     def __init__(self) :
         self.size = 1024
@@ -9,12 +6,18 @@ class Hashtable(object):
 
 
     def set(self , key , value ):
+        global  lst
+        lst = []
+        lst.append(key)
         idx = self.hash(key)
 
         if not self.map[idx]:
                 self.map[idx] = [[key , value]]
         else :
             self.map[idx].append([key , value])
+
+        
+
 
     def get(self , key):
         _key = self.hash(key)
@@ -43,22 +46,25 @@ class Hashtable(object):
         else :
             return True
 
-    def keys(self):
-        idx = self.get(self.key)
-        for item in self.map:
-            if item is not None:
-                return self.map[idx][self.key]
+    # def keys(self):
+    #     idx = self.get(key_)
+    #     for item in self.map:
+    #         if item is not None:
+    #             return self.map[idx][self.key]
 
     def hash(self , key):
         ascii_sum = 0
-        for i in key :
+        key = str(key)
+        for i in key:
             i_ascii = ord(i)
             ascii_sum += i_ascii
 
         hash_key = (ascii_sum * 907) % self.size
         return hash_key
 
-    
+    def keys(self):
+        return lst
+
 
 # def repeated_word(string):
 #     ascii_sum = 0
@@ -94,8 +100,12 @@ if __name__ == '__main__':
     # print(hashtable.hash("ayat"))
     # print(hashtable.get("clo"))
     # print(hashtable.hash("Django"))
+    # print(hashtable.hash("cloud"))
+    # print(hashtable.hash("clou"))
+    # print(hashtable.hash(11))
     print(hashtable.get("colud"))
     # hashtable.delete("clou")
     # print(hashtable.get("clou"))
 
     # print(repeated_word('hi hhi hiii'))
+    print(hashtable.keys())
