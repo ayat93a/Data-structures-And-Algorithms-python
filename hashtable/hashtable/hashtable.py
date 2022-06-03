@@ -6,7 +6,6 @@ class Hashtable(object):
 
 
     def set(self , key , value ):
-        global  lst
         lst = []
         lst.append(key)
         idx = self.hash(key)
@@ -17,8 +16,6 @@ class Hashtable(object):
             self.map[idx].append([key , value])
 
         
-
-
     def get(self , key):
         _key = self.hash(key)
         if self.map[_key]:
@@ -59,8 +56,14 @@ class Hashtable(object):
         return hash_key
 
     def keys(self):
-        return lst
-
+        key_collection = []
+        for item in self.map:
+            if item:
+                for pair in item:
+                    key_collection.append(pair[0]) 
+                
+        return key_collection
+            
 
 # def repeated_word(string):
 #     ascii_sum = 0
@@ -77,22 +80,23 @@ class Hashtable(object):
 #     return ascii_sum
 
 def leftJoin(hash1, hash2):
-
-    hash3 = Hashtable()
-
-    for key in hash1.keys():        
-        if hash2.contains(key):
-            hash3.set(key, [hash1.get(key), hash2.get(key)])
-        else:
-            hash3.set(key, [hash1.get(key), 'Null'])
-        
-    return hash3
-
+    dic = {}
+    for i in hash1.keys():
+       for j in hash2.keys():
+           if i == j :
+               dic.update({i : [hash1.get(i) , hash2.get(j)]})
+    return dic
+  
 if __name__ == '__main__':
     hashtable = Hashtable()
     hashtable.set("cloud", "AWS")
     hashtable.set("colud", "ayat")
     hashtable.set("clou", "ayat") 
+    hashtable1 = Hashtable()
+    hashtable1.set("cloud", "AWS_sec")
+    hashtable1.set("colud", "ayat_sec")
+    hashtable1.set("clou", "ayat_sec") 
+    # print(leftJoin(hashtable , hashtable1))
     # print(hashtable.map[0])
     # for item in enumerate(hashtable.map):
     #     if item is not None:
@@ -109,10 +113,14 @@ if __name__ == '__main__':
     # print(hashtable.hash("cloud"))
     # print(hashtable.hash("clou"))
     # print(hashtable.hash(11))
-    print(hashtable.get("colud"))
+    # print(hashtable.get("colud"))
     # hashtable.delete("clou")
     # print(hashtable.get("clou"))
 
 
     # print(repeated_word('hi hhi hiii'))
-    print(hashtable.keys())
+    # print(hashtable1.keys())
+    # print(hashtable1.keys())
+    # print(leftJoin(hashtable , hashtable1))
+    
+    

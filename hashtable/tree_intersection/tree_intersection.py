@@ -47,10 +47,6 @@ def tree_intersection(tree1 , tree2):
                 lst.append(i)
     return lst
 
-
-
-
-
 if __name__ == '__main__':
     tree1= BinaryTree ()
 
@@ -96,21 +92,5 @@ if __name__ == '__main__':
     print(converter(tree1))
     print(tree_intersection(tree1,tree2))
 
-    tree3 =BinaryTree()
-    node10 = TNode(29)
-    tree3.root = node10 
-    node20= TNode(53)
-    node30 = TNode(49)
-    node40 = TNode(33)
-    node50 = TNode(2)
-    node60=TNode(68)
-    node70 = TNode(1)
 
-    node10.left = node20
-    node10.right = node30
-    node20.left = node40
-    node20.right= node50
-    node30.left= node60
-    node40.left = node70
-
-    print(converter(tree3))
+    print(converter(tree2))
