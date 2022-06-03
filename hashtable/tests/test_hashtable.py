@@ -1,5 +1,5 @@
-from pyparsing import java_style_comment
-from hashtable.hashtable import Hashtable
+import pytest
+from hashtable.hashtable import Hashtable , leftJoin
 
 def test_get():
 
@@ -57,6 +57,28 @@ def test_hash1():
     actual = hashtable.hash(75)
     expected = 676
     assert actual == expected
+
+def test_keys():
+    hashtable = Hashtable()
+    hashtable.set('A' , 'First letter')
+    hashtable.set('A' , 'a is the small of it')
+    hashtable.set('B' , 'secound letter')
+    hashtable.set('B' , 'b is the small of it')
+    hashtable.set('Z' , 'last letter')
+    hashtable.set('Z' , 'z is the small of it')
+    assert hashtable.keys()==  ['B', 'B', 'A', 'A', 'Z', 'Z']
+
+def test_leftJoin():
+    hashtable1 = Hashtable()
+    hashtable2 = Hashtable()
+    hashtable1.set('A' , 'First letter')
+    hashtable2.set('A' , 'a is the small of it')
+    hashtable1.set('B' , 'secound letter')
+    hashtable2.set('B' , 'b is the small of it')
+    hashtable1.set('Z' , 'last letter')
+    hashtable2.set('Z' , 'z is the small of it')
+    assert leftJoin(hashtable1, hashtable2)==  {'B': ['secound letter', 'b is the small of it'], 'A': ['First letter', 'a is the small of it'], 'Z': ['last letter', 'z is the small of it']}
+
 
 def test_delete():
     hashtable = Hashtable()
