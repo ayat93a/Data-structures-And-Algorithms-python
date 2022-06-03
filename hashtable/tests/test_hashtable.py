@@ -1,4 +1,4 @@
-import pytest
+
 from hashtable.hashtable import Hashtable , leftJoin
 
 def test_get():

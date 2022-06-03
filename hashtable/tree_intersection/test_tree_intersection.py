@@ -1,9 +1,6 @@
-
 from pytest import fixture
 import pytest
-from hashtable.hashtable import Hashtable
-from tree_intersection import tree_intersection , converter , BinaryTree , TNode
-import pytest
+from tree_intersection import tree_intersection , converter , BinaryTree, TNode
 
 @pytest.fixture
 def tree1():

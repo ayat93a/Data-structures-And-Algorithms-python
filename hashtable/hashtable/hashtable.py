@@ -121,6 +121,6 @@ if __name__ == '__main__':
     # print(repeated_word('hi hhi hiii'))
     # print(hashtable1.keys())
     # print(hashtable1.keys())
-    # print(leftJoin(hashtable , hashtable1))
+    print(leftJoin(hashtable , hashtable1))
     
     

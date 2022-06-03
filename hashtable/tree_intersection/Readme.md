@@ -1,0 +1,14 @@
+# Challenge Summary
+- Write a function called tree_intersection that takes two binary trees as parameters.
+- Using your Hashmap implementation as a part of your algorithm, return a set of values found in both trees.
+
+## Whiteboard Process
+![](./tree-intersection.png)
+
+## Approach & Efficiency
+- Space complexity <- O(n)
+- Time complexity <- O(n)
+
+## Solution
+- [Code](./tree_intersection.py)
+- [Test](./test_tree_intersection.py)
