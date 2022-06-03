@@ -44,3 +44,27 @@ Implement a Hashtable Class with the following methods:
 
  - contains
     - The Contains method will accept a key, and return a bool on if that key exists inside the hashtable. The best way to do this is to have the contains call the `get` and check the hashtable if the key exists in the table given the index returned.
+
+
+____
+____
+
+# Hashmap LEFT JOIN
+
+- Write a function called left join
+- Arguments: two hash maps
+    - The first parameter is a hashmap that has word strings as keys, and a synonym of the key as values.
+    - The second parameter is a hashmap that has word strings as keys, and antonyms of the key as values.
+- Return: The returned data structure that holds the results is up to you. It doesn’t need to exactly match the output below, so long as it achieves the LEFT JOIN logic
+
+## Challenge
+- [Code](./hashtable/hashtable.py)
+- [Test](./tests/test_hashtable.py)
+
+## Approach & Efficiency
+- space : O(n) 
+- Time : O(n^2)
+
+## Solution
+![](./left_join.png)
+
